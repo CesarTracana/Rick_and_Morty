@@ -1,20 +1,24 @@
-<script setup>
-import { defineProps } from 'vue';
-import Card  from ".../components/Card.vue"
-
-    const props = ({
-        character: []
-    })
-    console.log(character.value.name)
-</script>
-
 <template>
-    <div>
+    <div class="flex flex-col overflow-hidden rounded-xl shadow-xl ">
         <div>
-            <img src="" alt="">
+            <img :src="character.image" alt="">
         </div>
-        <div>
-            <h3>nombre</h3>
+        <div class="p-3">
+            <h3 class="text-2x1 text-center">{{ character.name }}</h3>
         </div>
     </div>
 </template>
+
+<script setup>
+import { defineProps } from 'vue';
+
+    const props = defineProps({
+
+    character: {
+        required:true,
+        type: Object
+        }
+
+    })
+
+</script>
