@@ -42,9 +42,9 @@ loadCharacters();
  </div>
 
  <div class="grid gap-4 grid-cols-4 m-6">
-<div v-for="personaje in character" :key="character.id">
+<router-link v-for="personaje in character" :key="character.id" :to="`/${personaje.id}`">
   <card :character="personaje"></card>
-</div>
+</router-link>
 </div>
 
  <br><br>
