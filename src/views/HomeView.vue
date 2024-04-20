@@ -31,17 +31,17 @@ loadCharacters();
 </script>
 
 <template>
- <div class="flex justify-center mt-10">
-  <h1 class="text-5xl text-rose-950">Personajes de Rick & Morty</h1>
+ <div class="flex justify-center mb-12 mt-10">
+  <h1 class="text-3xl md:text-5xl text-rose-950">Personajes de Rick & Morty</h1>
  </div>
 
  <div class="flex justify-center items-center m-4 space-x-4">
  <button class="bg-gray-300 rounded-xl text-center p-4"@click="previousPage" :disabled="page===1">Pagina anterior</button>
- <div>{{ page }}</div>
+ <div class="text-3xl">{{ page }}</div>
  <button  class="bg-gray-300 rounded-xl text-center p-4"@click="nextPage">Siguiente pagina</button>
  </div>
 
- <div class="grid gap-4 grid-cols-4 m-6">
+ <div class="grid gap-4 md:grid-cols-3 lg:grid-cols-5 grid-cols-2 m-6">
 <router-link v-for="personaje in character" :key="character.id" :to="`/${personaje.id}`">
   <card :character="personaje"></card>
 </router-link>

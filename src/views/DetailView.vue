@@ -1,7 +1,7 @@
 <template>
   <div v-if="character" class="about">
 
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 h-screen">
       <div class="m-12">
         <img class="h-full w-full rounded-3xl":src= character.image alt="">
       </div>
@@ -9,18 +9,29 @@
         <div class="flex justify-center">
          <h1 class="text-5xl font-bold">{{ character.name }}</h1>
         </div>
-        <p class="text-2xl font-bold">Genero: {{ character.gender }}</p>
+        <div class="flex">
+        <Icon class="text-3xl" icon="ph:gender-male-fill" /><p class="text-2xl font-bold">Genero: {{ character.gender }}</p>
          <br>
-         <p class="text-2xl font-bold">Especie: {{ character.species }}</p>
+         </div>
+         <div class="flex">
+         <Icon class="text-3xl" icon="icon-park:people" /><p class="text-2xl font-bold">Especie: {{ character.species }}</p>
          <br>
-         <p class="text-2xl font-bold">Estado: {{ character.status }}</p>
+         </div>
+         <div class="flex">
+         <Icon class="text-3xl" icon="game-icons:half-dead" /><p class="text-2xl font-bold">Estado: {{ character.status }}</p>
          <br>
-         <p class="text-2xl font-bold">Creacion: {{ character.created }}</p>
+         </div>
+         <div class="flex">
+         <Icon class="text-3xl" icon="logos:create-react-app" /><p class="text-2xl font-bold">Creacion: {{ character.created }}</p>
          <br>
-         <p class="text-2xl font-bold">Origen: {{ character.origin.name }}</p>
+         </div>
+         <div class="flex">
+         <Icon class="text-3xl" icon="logos:origin" /><p class="text-2xl font-bold">Origen: {{ character.origin.name }}</p>
          <br>
-         <p class="text-2xl font-bold">Locacion: {{ character.location.name }}</p>
-       
+         </div>
+         <div class="flex">
+         <Icon class="text-3xl" icon="openmoji:location-indicator-red" /><p class="text-2xl font-bold">Locacion: {{ character.location.name }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +40,7 @@
 <script setup> 
  import { useRoute} from 'vue-router';
  import {onMounted, ref} from "vue"
+ import { Icon } from '@iconify/vue';
  const character = ref(null)
 
  const route = useRoute()
